@@ -1,0 +1,185 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/login":
+    get:
+      summary: list logins
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create login
+      responses:
+        '200':
+          description: successful
+  "/login/new":
+    get:
+      summary: new login
+      responses:
+        '200':
+          description: successful
+  "/login/{id}/edit":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: edit login
+      responses:
+        '200':
+          description: successful
+  "/login/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show login
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update login
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update login
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete login
+      responses:
+        '200':
+          description: successful
+  "/logout":
+    get:
+      summary: list logouts
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create logout
+      responses:
+        '200':
+          description: successful
+  "/logout/new":
+    get:
+      summary: new logout
+      responses:
+        '200':
+          description: successful
+  "/logout/{id}/edit":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: edit logout
+      responses:
+        '200':
+          description: successful
+  "/logout/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show logout
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update logout
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update logout
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete logout
+      responses:
+        '200':
+          description: successful
+  "/useracc":
+    get:
+      summary: list useraccs
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create useracc
+      responses:
+        '200':
+          description: successful
+  "/useracc/new":
+    get:
+      summary: new useracc
+      responses:
+        '200':
+          description: successful
+  "/useracc/{id}/edit":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: edit useracc
+      responses:
+        '200':
+          description: successful
+  "/useracc/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show useracc
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update useracc
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update useracc
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete useracc
+      responses:
+        '200':
+          description: successful
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
