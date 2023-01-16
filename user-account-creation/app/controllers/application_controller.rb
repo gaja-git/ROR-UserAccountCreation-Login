@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
     def index
-        render html: "rendering application"
+        render html: "Please login to application"
     end
 
 end
