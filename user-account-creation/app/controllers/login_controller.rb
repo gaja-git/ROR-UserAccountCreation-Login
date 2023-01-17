@@ -9,13 +9,14 @@ class LoginController < ApplicationController
         usr = Useracc.find_by('useremail': params[:useremail])
         if(usr.nil?)
             render json: "User does not exit"
+        # else
+        #     if(usr.authenticate(params[:password]))
+        #         session[:current_user_id] = usr.id
         else
-            if(usr.authenticate(params[:password]))
-                session[:current_user_id] = usr.id
                 render json: "logged in successfully"
-            else
-                render json: "Password is not correct"
-            end
+            # else
+            #     render json: "Password is not correct"
+            # end
         end
     end
 
