@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   resources :useracc
   resources :login
   resources :logout
+  resources :bookstock
+  resources :searchbkname
+  resources :searchbkauthor
+  post '/signup', to: 'useracc#create'
 end

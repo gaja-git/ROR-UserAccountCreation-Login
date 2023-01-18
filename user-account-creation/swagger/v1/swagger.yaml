@@ -120,6 +120,122 @@ paths:
       responses:
         '200':
           description: successful
+  "/searchbkauthor":
+    get:
+      summary: list searchbkauthors
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create searchbkauthor
+      responses:
+        '200':
+          description: successful
+  "/searchbkauthor/new":
+    get:
+      summary: new searchbkauthor
+      responses:
+        '200':
+          description: successful
+  "/searchbkauthor/{id}/edit":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: edit searchbkauthor
+      responses:
+        '200':
+          description: successful
+  "/searchbkauthor/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show searchbkauthor
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update searchbkauthor
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update searchbkauthor
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete searchbkauthor
+      responses:
+        '200':
+          description: successful
+  "/searchbkname":
+    get:
+      summary: list searchbknames
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create searchbkname
+      responses:
+        '200':
+          description: successful
+  "/searchbkname/new":
+    get:
+      summary: new searchbkname
+      responses:
+        '200':
+          description: successful
+  "/searchbkname/{id}/edit":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: edit searchbkname
+      responses:
+        '200':
+          description: successful
+  "/searchbkname/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show searchbkname
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update searchbkname
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update searchbkname
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete searchbkname
+      responses:
+        '200':
+          description: successful
   "/useracc":
     get:
       summary: list useraccs
@@ -175,6 +291,12 @@ paths:
           description: successful
     delete:
       summary: delete useracc
+      responses:
+        '200':
+          description: successful
+  "/signup":
+    post:
+      summary: create useracc
       responses:
         '200':
           description: successful

@@ -1,10 +1,10 @@
 require 'swagger_helper'
 
-RSpec.describe 'useracc', type: :request do
+RSpec.describe 'searchbkauthor', type: :request do
 
-  path '/useracc' do
+  path '/searchbkauthor' do
 
-    get('list useraccs') do
+    get('list searchbkauthors') do
       response(200, 'successful') do
 
         after do |example|
@@ -18,24 +18,7 @@ RSpec.describe 'useracc', type: :request do
       end
     end
 
-    post('create useracc') do
-      response(200, 'successful') do
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-  end
-
-  path '/useracc/new' do
-
-    get('new useracc') do
+    post('create searchbkauthor') do
       response(200, 'successful') do
 
         after do |example|
@@ -50,11 +33,28 @@ RSpec.describe 'useracc', type: :request do
     end
   end
 
-  path '/useracc/{id}/edit' do
+  path '/searchbkauthor/new' do
+
+    get('new searchbkauthor') do
+      response(200, 'successful') do
+
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
+    end
+  end
+
+  path '/searchbkauthor/{id}/edit' do
     # You'll want to customize the parameter types...
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
-    get('edit useracc') do
+    get('edit searchbkauthor') do
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -70,11 +70,11 @@ RSpec.describe 'useracc', type: :request do
     end
   end
 
-  path '/useracc/{id}' do
+  path '/searchbkauthor/{id}' do
     # You'll want to customize the parameter types...
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
-    get('show useracc') do
+    get('show searchbkauthor') do
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -89,7 +89,7 @@ RSpec.describe 'useracc', type: :request do
       end
     end
 
-    patch('update useracc') do
+    patch('update searchbkauthor') do
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -104,7 +104,7 @@ RSpec.describe 'useracc', type: :request do
       end
     end
 
-    put('update useracc') do
+    put('update searchbkauthor') do
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -119,26 +119,9 @@ RSpec.describe 'useracc', type: :request do
       end
     end
 
-    delete('delete useracc') do
+    delete('delete searchbkauthor') do
       response(200, 'successful') do
         let(:id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-  end
-
-  path '/signup' do
-
-    post('create useracc') do
-      response(200, 'successful') do
 
         after do |example|
           example.metadata[:response][:content] = {

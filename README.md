@@ -8,7 +8,7 @@ rails new user-account-creation -d postgresql
 
 /config/database.yml
 replace
-line 26:postgres_rails_app_development - bookdb
+line 26: - bookdb
 line 32: uncomment
 line 35: uncomment give your password
 line 40: uncomment
@@ -42,7 +42,7 @@ uncomment line 37 - bycrypt
 then run "bundle install"
 
 /config/routes
-resources :user
+resources :useracc
 
 in useracc_controller.rb
 require 'bcrypt'
@@ -52,6 +52,12 @@ in useracc.rb model file
 class Useracc < ApplicationRecord
 has_secure_password  
 end
+
+/config/routes
+post '/signup', to: 'useracc#create'
+
+/app/controllers/useracc_controller.rb
+define create method to post operation - to add new user
 
 rails generate controller login
 /config/routes
@@ -65,3 +71,24 @@ rails generate controller logout
 /config/routes
 resources :logout
 add crud in logout_controller
+
+For api /useracc
+Only the logged user details will be available/displayed else null record will be shown
+
+//The below book resources will be available to logged in user - session id is checked on each operation
+/app/bookstock_controller.rb
+
+add read, create, update, destroy function for get/post/put/delete
+enter the data for table
+
+for search by book named
+rails generate controller searchbkname
+/app/searchbkname_controlller.rb
+implement the create method
+
+in postman execute post o/p with bookname i/p field
+
+for search by book author
+rails generate controller searchbkauthor
+/app/searchbkauthor_controller.rb
+implement the create method
